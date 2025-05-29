@@ -1,0 +1,26 @@
+{
+  "name": "AudioCalcs",
+  "version": "1.0.0",
+  "description": "Assorted calculators for Live Audio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^35.1.3",
+    "electron-builder": "^26.0.12"
+  },
+  "dependencies": {
+    "dragula": "^3.7.2",
+    "electron-tabs": "^0.9.1"
+  },
+  "build": {
+    "appId": "com.example.AudioCalcs",
+    "productName": "AudioCalcs",
+    "win": {
+      "target": "nsis",
+      "icon": "./images/logo.png"
+    }
+  }
+}

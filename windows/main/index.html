@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<!-- Run npx electron-builder to build the app -->
+
+<html>
+    <script src="js/bluetooth.js"></script>
+    
+<head>
+    <title>Audio Calcs</title>
+  
+    <link href="./index.css" rel="stylesheet" />  
+  <!--  <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" type="image/x-icon" href="electron/images/favicon.ico">
+</head>
+<body>
+    <div class="header-container">
+        <h1>&nbsp;&nbsp;<img src="./logo.png"  top:15px; padding-right:50;"   width="70" height="70" >&nbsp;&nbsp;&nbsp;Audio Calculators</h1>
+       <br>
+      </div>
+      <div class="header-container">
+        <nav class="menu">
+            <ul class="nav">
+                <li class="drop">
+                    <span>&#9776;</span>
+                    <ul>
+                        <li>
+                            <a href="../../windows/main/index.html">Distance/Elevation Calculator</a>
+                        </li>
+                        <li>
+                            <a href="../../tabs/path-offset.html">Path Offset - Delay Calculator</a>
+                        </li> 
+                        <li>
+                          <a href="../../tabs/wavelength.html">Distance-Time-Wavelength Calculators</a>
+                      </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <h2>Distance/Elevation Calculator</h2>
+    </div>
+    <div class="container">
+ <!--   <h1>&nbsp;&nbsp;<img src="images/logo.png"  top:15px; padding-right:50;"   width="70" height="70" >&nbsp;&nbsp;&nbsp;Distance/Elevation Calculator</h1>-->
+
+   <div style="width: 500px; margin-left: 200px ;">
+   <div style="display: table; margin-left: 20px;">
+
+    <div style="display: table-row;">
+        <div class="tooltip-label">
+            <label style="display: table-cell;" for="observerHeight">Measurement Height:&nbsp;&nbsp;&nbsp;</label>
+            <span class="tooltip-text">Height of the measurement device</span>
+        </div>
+        <input style="display: table-cell;" type="number" id="observerHeight" name="observerHeight" value="1.32" oninput="calculateSides()">
+        <label style="display: table-cell;"> &nbsp;&nbsp;&nbsp;m</label>
+    </div>
+    <div style="display: table-row;">
+        <div class="tooltip-label">
+            <label style="display: table-cell;" for="hypotenuse">Measured Distance:&nbsp;&nbsp;&nbsp;</label>
+            <span class="tooltip-text">Measured diagonal distance</span>
+        </div>
+        <input style="display: table-cell;" type="number" id="hypotenuse" name="hypotenuse" value="0" oninput="calculateSides()">
+        <label style="display: table-cell;"> &nbsp;&nbsp;&nbsp;m</label>
+    </div>
+    <div style="display: table-row;">
+        <div class="tooltip-label">
+            <label style="display: table-cell;" type="number" for="angle">Measured Angle:&nbsp;&nbsp;&nbsp;</label>
+            <span class="tooltip-text">Angle of the measurement</span>
+        </div>
+        <input style="display: table-cell;" type="number" id="angle" name="angle" value="0" oninput="calculateSides()">
+        <label style="display: table-cell;"> &nbsp;&nbsp;&nbsp;&deg</label>
+    </div>
+</div>
+</div>
+
+
+    <button class="button-custom" onclick="calculateSides(true)">Calculate</button><br>
+   
+    <b><p  id="result" style="text-align:left"></p></b>
+
+    <script src="js/trigcalc.js"></script><br>
+
+    <button class="button-custom" onclick="clearFields()">Clear</button><br>
+
+    <div style="display: flex; gap: 40px; margin-left: 20px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="tooltip-label">
+                <label for="offsetHeight">Stage Height Offset (m):</label>
+                <span class="tooltip-text">Add a height offset (e.g., stage height) to your measurements</span>
+            </div>
+            <input type="number" id="offsetHeight" name="offsetHeight" value="0" oninput="calculateSides()">
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="tooltip-label">
+                <label for="offsetDepth">Depth Offset (m):</label>
+                <span class="tooltip-text">Add or subtract a distance offset from the zero measurement point if needed. For instance if you have to move back to take a measurement</span>
+            </div>
+            <input type="number" id="offsetDepth" name="offsetDepth" value="0" oninput="calculateSides()">
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <div class="tooltip-label">
+                <label for="offsetSeat">Seat Height Offset (m):</label>
+                <span class="tooltip-text">Subtract the height of a seat back from the height calculation if there is no clear LOS to the measurement point at floor level</span>
+            </div>
+            <input type="number" id="offsetSeat" name="offsetseat" value="0" oninput="calculateSides()">
+        </div>
+
+    </div>
+    <div style="display: flex; gap: 40px; margin-left: 20px;">
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <button class="button-custom2" onclick="clearOffsets()">Clear Offsets</button>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <button class="button-custom2" id="toggleButton" onclick="toggleAutoCalculate()">Turn Auto-Calculate Off</button>
+        </div>
+    </div>
+</div>  
+<!-- <button class="button-custom2" onclick="connectToDevice()">Connect to Laser Measure</button>  -->
+</body>
+</html>
+
+

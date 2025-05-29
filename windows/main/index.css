@@ -1,0 +1,281 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  appearance: textfield; /* Standard property */
+  -moz-appearance: textfield;
+}
+
+body {
+    font-family: 'Arial, sans-serif';
+    color:rgb(170, 170, 170)
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    display: inline-block;
+    cursor: pointer;
+    align-items: label;
+}
+
+ul li:hover {
+  background: #3d3d3d;
+}
+
+.drop {
+  position: relative;
+  padding: 1em 18px;
+}
+
+.drop ul {
+  position: absolute;
+  left: 0;
+  top: 3.3em;
+  transition: all 0.3s ease, opacity 0.3s ease;
+  transform: scale(0);
+  transform-origin: 0 0;
+  box-shadow: 0 2px 4px 0 rgb(0, 0, 0), 0 2px 8px 0 rgb(0, 0, 0);
+  opacity: 0;
+  
+}
+
+.drop ul li {
+  display: block;
+}
+
+.drop ul li a {
+  background-color: #2d2d2d; /* Ensure the links also inherit the solid background */
+  color: #333; /* Adjust text color for contrast */
+  text-decoration: none;
+}
+
+.drop ul li a:hover {
+  background-color: #3d3d3d; /* Optional: Change color on hover */
+}
+
+.drop ul li a {
+  width: 80%;
+  padding: 1em 18px;
+  display: inline-block;
+
+  box-sizing: border-box;
+  color: rgb(200,200,200);
+  text-decoration: none;
+}
+
+.drop ul li a:hover {
+  background: #3d3d3d;
+}
+
+.drop:hover ul {
+  transform: scale(1);
+  opacity: 1; /* Restore full opacity on hover */
+}
+
+.container {
+  display: flex;
+  flex-direction: column; /* Ensures elements are stacked vertically */
+  justify-content: center; /* Aligns items vertically */
+  align-items: center; /* Aligns items horizontally */
+ /* min-height: 100vh; /* Makes the container take the full viewport height */
+  margin: 0 auto; /* Centers horizontally (for safety with older browsers) */
+}
+
+.menu {
+  margin-right: 20px; /* Adds spacing */
+}
+
+.header-container {
+  display: flex;
+  align-items: center; /* Ensures vertical alignment */
+  justify-content: space-between; /* Adds space between elements */
+ /* padding: 10px; */ /* Optional padding */
+  background-color: #2d2d2d; /* Optional background */
+}
+
+.menu {
+  flex-shrink: 0; /* Prevents the menu from shrinking */
+}
+
+h2 {
+  flex-grow: 1; /* Allows the h2 to take up remaining space */
+  text-align: left; /* Centers the text */
+  margin: 20; /* Resets default margins */
+}
+
+
+/*Input box Styling*/
+input[type=number] {
+  width: 100px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color: #3d3d3d;
+  border: 1px solid #555;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+ /* border-radius: 12px; */
+  height: 20px;
+  color: rgb(200, 200, 200);
+}
+
+input[type=number]:focus {
+  border: 1px solid #555;
+}
+
+  /*General Alignment*/
+  body {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content:left;
+
+    margin: 0;
+    background-color: #2d2d2d;
+    font-family: Arial, sans-serif;
+    color: rgb(170, 170, 170);
+    
+}
+input, button {
+    margin: 10px 0;
+}
+
+img {
+  vertical-align: middle;
+}
+
+p {
+  font-size: 100%;
+  color:rgb(170, 170, 170);
+} 
+
+.button-custom {
+  background-color: #444; color: rgb(200,200,200);
+  border: 1px solid #555;
+  /* border-radius: 5px; */
+  width: 200px; /* Adjust width as needed */
+  height: 30px; /* Optional: Set button height */
+/*  padding: 5px; /* Optional: Add padding for better appearance */
+  text-align: center; /* Center the button text */
+  margin-left: 10px; /* Apply a margin */
+}
+.button-custom:hover {
+  background-color: #575757;
+
+}
+.button-custom2 {
+  background-color: #444; color: rgb(200, 200, 200);
+  border: 1px solid #555;
+  /* border-radius: 5px; */
+  width: 200px; /* Adjust width as needed */
+  height: 30px; /* Optional: Set button height */
+/*  padding: 5px; /* Optional: Add padding for better appearance */
+  text-align: center; /* Center the button text */
+  margin-left: 10px; /* Apply a margin */
+}
+.button-custom2:hover {
+  background-color: #575757;
+
+}
+
+.results-table {
+  display: table;
+  margin-left: 20px;
+}
+.results-row {
+  display: table-row;
+}
+.results-cell {
+  display: table-cell;
+}
+.results-highlight, .highlight {
+  color: green;
+}
+
+.tooltip-label {
+  position: relative;
+  display: table-cell;
+}
+
+.tooltip-label .tooltip-text {
+  visibility: hidden;
+  width: 180px;
+  background-color: #444;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 4px;
+  
+  position: absolute;
+  z-index: 1;
+  bottom: 120%; /* Position above the label */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.tooltip-label:hover .tooltip-text {
+  visibility: visible;
+  animation: tooltipkeys 1s 1; 
+  opacity: 1;
+}
+
+/* Tooltip fade in stuff */
+@-webkit-keyframes tooltipkeys {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes tooltipkeys {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes tooltipkeys {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes tooltipkeys {
+  0% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

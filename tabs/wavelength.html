@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <script src="wavelength.js"></script>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Audio Calcs</title>
+  <link href="./index.css" rel="stylesheet" />  
+
+  <!--  <link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
+    <link rel="icon" type="image/x-icon" href="electron/images/favicon.ico">
+
+</head>
+
+<body>
+  <div class="header-container">
+    <h1>&nbsp;&nbsp;<img src="./logo.png"  top:15px; padding-right:50;"   width="70" height="70" >&nbsp;&nbsp;&nbsp;Audio Calculators</h1>
+   <br>
+  </div>
+  <div class="header-container">
+    <nav class="menu">
+        <ul class="nav">
+            <li class="drop">
+                <span>&#9776;</span>
+                <ul>
+                    <li>
+                        <a href="../windows/main/index.html">Distance/Elevation Calculator</a>
+                    </li>
+                    <li>
+                      <a href="../tabs/path-offset.html">Path Offset - Delay Calculator</a>
+                  </li> 
+                  <li>
+                    <a href="../tabs/wavelength.html">Distance-Time-Wavelength Calculators</a>
+                </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <h2>Distance-Wavelength-Time Calculators</h2>
+</div>
+
+
+
+
+  <div class="container">
+    <h3>Frequency - Wavelength</h3>
+    <div style="width: 500px; margin-left: 200px ;">
+      <div style="display: table; margin-left: 20px;">
+        
+       <div style="display: table-row;">
+           <div class="tooltip-label">
+               <label style="display: table-cell;" for="frequency">Frequency (Hz):&nbsp;&nbsp;&nbsp;</label>
+           </div>
+           <input style="display: table-cell;" type="number" id="frequency" name="frequency="" oninput="calculateWavelength()">
+           <label style="display: table-cell;"> &nbsp;&nbsp;&nbsp;Hz</label>
+       </div>
+
+</div>  
+
+<button class="button-custom" onclick="calculateWavelength(true)">Calculate</button><br>
+<div id="waveResults" style="margin-top: 20px; height: 60px;"></div>
+<button class="button-custom" onclick="clearWaveLength(true)">Clear</button><br>
+
+<h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Distance - Time</h3>
+<div class="container">
+  <div style="width: 500px;">
+    <div style="display: table;margin-left: 20px;">
+      
+     <div style="display: table-row;">
+         <div class="tooltip-label">
+             <label style="display: table-cell;" for="distance">Distance (m):&nbsp;&nbsp;&nbsp;</label>
+         </div>
+         <input style="display: table-cell;" type="number" id="distance" name="distance" oninput="calculateDelay()">
+         <label style="display: table-cell;"> &nbsp;&nbsp;&nbsp;m</label>
+     </div>
+
+</div>  
+
+<button class="button-custom" onclick="calculateDelay(true)">Calculate</button><br>
+<div id="delayResults" style="margin-top: 20px; height: 40px;"></div>
+<button class="button-custom" onclick="clearFields(true)">Clear</button><br>
+</body>
+
+</html>
